@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Foxana Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Top-left business name */
+    .brand {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      left: 24px;
+      font-size: 0.85rem;
+      opacity: 0.65;
+      line-height: 1.4;
+    }
+
+    /* Main layout */
+    .container {
+      display: flex;
+      height: 100%;
+      padding: 40px;
+    }
+
+    .left,
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* Launching Soon text */
+    .launching {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      text-align: center;
+    }
+
+    /* Right-side content */
+    .message {
+      max-width: 500px;
+      line-height: 1.6;
+      font-size: 1.5rem;
+    }
+
+    .message p {
+      margin-bottom: 72px;
+    }
+
+    .contact {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .contact a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .left,
+      .right {
+        flex: unset;
+        margin-top: 40px;
+      }
+
+      footer {
+        position: static;
+        margin-top: 40px;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="brand">Foxana Studio</div>
+
+<div class="container">
+  <div class="left">
+    <div class="launching">Launching Soon</div>
+  </div>
+
+  <div class="nav">
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="right">
+    <div class="message">
+      <p>
+        A brand-new app from us is coming to the App Store very soon! 👀<br />
+        So sit tight and check back!<br />
+        You might see something that will blow your socks off!
+      </p>
+
+      <div class="contact">
+        Really excited to get in touch with us?<br />
+        Send us an email at
+        <a href="mailto:support@test.com">support@foxanastudio.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  We’re obsessed with building delightful apps that make everyday moments a little more magical.
+</footer>
+</body>
+</html>
