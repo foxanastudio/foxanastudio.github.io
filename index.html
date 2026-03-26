@@ -1,134 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Foxana Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="styles/header.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #000;
-      color: #fff;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    /* Footer */
-    footer {
-      position: absolute;
-      bottom: 20px;
-      left: 24px;
-      font-size: 0.85rem;
-      opacity: 0.65;
-      line-height: 1.4;
-    }
-
-    /* Main layout */
-    .container {
-      display: flex;
-      height: 100%;
-      padding: 40px;
-    }
-
-    .left,
-    .right {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Launching Soon text */
-    .launching {
-      font-family: 'Pacifico', cursive;
-      font-size: clamp(3rem, 6vw, 5rem);
-      text-align: center;
-    }
-
-    /* Right-side content */
-    .message {
-      max-width: 500px;
-      line-height: 1.6;
-      font-size: 1.5rem;
-    }
-
-    .message p {
-      margin-bottom: 72px;
-    }
-
-    .contact {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    .contact a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    /* Mobile layout */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .left,
-      .right {
-        flex: unset;
-        margin-top: 40px;
-      }
-
-      footer {
-        position: static;
-        margin-top: 40px;
-        text-align: center;
-        padding-bottom: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="brand">Foxana Studio</div>
-
-<div class="container">
-  <div class="left">
-    <div class="launching">Launching Soon</div>
-  </div>
-
-  <div class="nav">
-    <a href="about">About</a>
-    <a href="infinity-privacy">Privacy Policy</a>
-    <a href="contact">Contact Us</a>
-  </div>
-
-  <div class="right">
-    <div class="message">
-      <p>
-        A brand-new app from us is coming to the App Store very soon! 👀<br />
-        So sit tight and check back!<br />
-        You might see something that will blow your socks off!
-      </p>
-
-      <div class="contact">
-        Really excited to get in touch with us?<br />
-        Send us an email at
-        <a href="mailto:support@foxanastudio.com">support@foxanastudio.com</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  We’re obsessed with building delightful apps that make everyday moments a little more magical.
-</footer>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Foxana Studio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="styles/header.css">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            body {
+                margin: 0;
+                height: 100vh;
+                background: #000;
+                color: #fff;
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            }
+            
+            footer {
+                font-size: 0.85rem;
+                opacity: 0.65;
+                line-height: 1.4;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            
+            .container {
+                display: flex;
+                min-height: 100vh;
+                padding: 40px;
+                max-width: 1500px;
+                margin: 0 auto;
+            }
+            
+            .container + .container {
+                min-height: auto;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            
+            .left, .right {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .app-icon {
+                width: 120px;
+                height: 120px;
+                border-radius: 28px;
+                margin-bottom: 20px;
+                box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+            }
+            
+            .app-name {
+                font-size: 2.5rem;
+                margin: 0;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+                opacity: 0.7;
+                margin: 10px 0 30px;
+            }
+            
+            .app-store {
+                width: 160px;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+            
+            .app-store:hover {
+                transform: scale(1.05);
+            }
+            
+            .subreddit-link {
+                display: block;
+                width: fit-content;
+                margin: 30px auto 0;
+                padding: 8px 16px;
+                font-size: 1rem;
+                color: #fff;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                text-decoration: none;
+                transition: background-color 0.2s, transform 0.2s;
+            }
+            
+            .subreddit-link:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+            
+            .subreddit-link:active {
+                transform: translateY(0);
+            }
+            
+            .section_title {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .section_text {
+                max-width: 500px;
+                margin: 0 auto;
+                margin-top: 24px;
+                line-height: 1.6;
+                text-align: justify;
+                color: #ccc;
+            }
+            
+            .hero-line {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero-sub {
+                font-size: 1.2rem;
+                opacity: 0.8;
+            }
+            
+            .screenshot {
+                width: 280px;
+                max-width: 100%;
+                border-radius: 24px;
+                margin-bottom: 16px;
+            }
+            
+            .caption {
+                font-size: 1.4rem;
+                opacity: 0.8;
+            }
+            
+            .container:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            
+            .download-cta {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 80px 40px;
+                text-align: center;
+            }
+            
+            .download-cta h2 {
+                font-size: clamp(2rem, 4vw, 3rem);
+                margin-bottom: 24px;
+            }
+            
+            .download-cta p {
+                font-size: 1.2rem;
+                margin-bottom: 40px;
+                color: #ccc;
+                line-height: 1.5;
+                text-align: justify
+            }
+            
+            .download-cta .app-store {
+                max-width: 200px;
+                width: 100%;
+                height: auto;
+            }
+            
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    min-height: 100vh;
+                }
+                
+                .container:nth-child(even) {
+                    flex-direction: column;
+                }
+                
+                .left, .right {
+                    flex: unset;
+                    width: 100%;
+                    margin-top: 40px;
+                }
+                
+                .download-cta h2 {
+                    max-width: 500px;
+                }
+                
+                .download-cta p {
+                    max-width: 500px;
+                }
+                
+                footer {
+                    position: static;
+                    margin-top: 40px;
+                    text-align: center;
+                    padding-bottom: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="brand">Foxana Studio</div>
+        
+        <div class="nav">
+            <a href="about">About</a>
+            <a href="infinity-privacy">Privacy Policy</a>
+            <a href="contact">Contact Us</a>
+        </div>
+        
+        <div class="container">
+            <div class="left">
+                <div>
+                    <img src="resources/icon.png" alt="App Icon" class="app-icon" />
+                    
+                    <h1 class="app-name">Infinity for Reddit</h1>
+                    <p class="tagline">The infinitely better Reddit experience</p>
+                    
+                    <a href="https://apps.apple.com/us/app/infinity-for-reddit/id6759064642" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="resources/app_store_badge.svg"
+                        alt="Download on the App Store"
+                        class="app-store"
+                        />
+                    </a>
+                    
+                    <a href="https://reddit.com/r/Infinity_For_Reddit" class="subreddit-link" target="_blank" rel="noopener noreferrer">
+                        Join our subreddit r/Infinity_For_Reddit
+                    </a>
+                </div>
+            </div>
+            
+            <div class="right">
+                <div>
+                    <img src="resources/screen1.png" class="screenshot" />
+                    <p class="hero-line">
+                    Enjoy Reddit, your way.
+                    </p>
+                    <p class="hero-sub">
+                    No ads. No distractions. Built with privacy in mind.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="left">
+                <div>
+                    <h1 class="section_title">Post Anything, Anytime</h2>
+                    <p class="section_text">Unlike other apps, Infinity lets you submit every type of post. Share text, images, gifs, videos, links, and polls, all from one place.</p>
+                </div>
+            </div>
+            
+            <div class="right">
+                <img src="resources/screen2.png" class="screenshot" />
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="left">
+                <div>
+                    <h1 class="section_title">Express Yourself with Images and GIFs</h2>
+                    <p class="section_text">Infinity is once again the only app that lets you embed images and GIFs directly into your posts and comments. Make your content more fun, visual, and engaging.</p>
+                </div>
+            </div>
+            
+            <div class="right">
+                <img src="resources/screen3.png" class="screenshot" />
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="left">
+                <div>
+                    <h1 class="section_title">See Only What You Want</h2>
+                    <p class="section_text">Infinity's advanced filtering system lets you block unwanted posts and comments. Focus on the content that matters most and customize your feed so you never miss what you care about.</p>
+                </div>
+            </div>
+            
+            <div class="right">
+                <img src="resources/screen4.png" class="screenshot" />
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="left">
+                <div>
+                    <h1 class="section_title">Tailor the App to Your Taste</h2>
+                    <p class="section_text">With the widest range of theme options, Infinity lets you fully customize the look and feel. Make your Reddit experience uniquely yours with colors, layouts, and styles that match your style.</p>
+                </div>
+            </div>
+            
+            <div class="right">
+                <img src="resources/screen5.png" class="screenshot" />
+            </div>
+        </div>
+        
+        <div class="download-cta">
+          <div>
+            <h2>Try Infinity for Reddit</h2>
+            <p>Experience all these unique features in one app. Download now and take full control of your Reddit experience!</p>
+            <a href="https://apps.apple.com/us/app/infinity-for-reddit/id6759064642" target="_blank" rel="noopener noreferrer">
+              <img src="resources/app_store_badge.svg" alt="Download on the App Store" class="app-store">
+            </a>
+            <a href="https://reddit.com/r/Infinity_For_Reddit" class="subreddit-link" target="_blank" rel="noopener noreferrer">
+                Join our subreddit r/Infinity_For_Reddit
+            </a>
+          </div>
+        </div>
+        
+        <footer>
+            We’re obsessed with building delightful apps that make everyday moments a little more magical.
+        </footer>
+    </body>
 </html>
