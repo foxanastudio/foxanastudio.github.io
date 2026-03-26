@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Us – Foxana Studio</title>
+  <title>Contact Us - Foxana Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="resources/apple-touch-icon.ico">
+  
   <link rel="stylesheet" href="styles/header.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -48,6 +52,8 @@
       opacity: 1;
     }
   </style>
+  
+  <script src="scripts/nav.js"></script>
 </head>
 <body>
 
@@ -56,8 +62,13 @@
 </div>
 
 <div class="nav">
-  <a href="about">About</a>
-  <a href="infinity-privacy">Privacy Policy</a>
+  <button class="hamburger">
+    <img src="resources/menu.svg" alt="Nav" />
+  </button>
+  <div class="nav-links">
+    <a href="about">About</a>
+    <a href="infinity-privacy">Privacy Policy</a>
+  </div>
 </div>
 
 <div class="container">
@@ -65,7 +76,7 @@
   <p>We’d love to hear from you! 👋</p>
   <p>If you have questions, feedback, or suggestions, please email us at:</p>
   <p><a class="contact-link" href="mailto:support@foxanastudio.com">support@foxanastudio.com</a></p>
-  <p>We usually reply within 24–48 hours.</p>
+  <p>We usually reply within 24-48 hours.</p>
 </div>
 
 </body>

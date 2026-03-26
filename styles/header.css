@@ -21,18 +21,70 @@
   position: absolute;
   top: 24px;
   right: 24px;
-  font-size: 0.95rem;
-  display: flex;
-  gap: 24px;
 }
 
-.nav a {
-  color: #fff;
+.hamburger {
+  display: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: #FFFFFF;
   text-decoration: none;
-  opacity: 0.8;
 }
 
 .nav a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background-color: #1A1A1A;
+    position: absolute;
+    width: max-content;
+    max-width: 90vw;
+    top: 48px;
+    right: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .nav.active .nav-links {
+    display: flex;
+  }
+  
+  .nav-links a {
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    padding: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .nav a:hover {
+    text-decoration: none;
+    background-color: #333333;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

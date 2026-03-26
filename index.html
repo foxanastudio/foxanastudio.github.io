@@ -5,6 +5,10 @@
         <title>Infinity for Reddit - The infinitely better Reddit experience</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
+        <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="resources/apple-touch-icon.ico">
+        
         <link rel="stylesheet" href="styles/header.css">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
         
@@ -87,14 +91,14 @@
                 padding: 8px 16px;
                 font-size: 1rem;
                 color: #fff;
-                background-color: rgba(255, 255, 255, 0.1);
+                background-color: #0D0D0D;
                 border-radius: 8px;
                 text-decoration: none;
                 transition: background-color 0.2s, transform 0.2s;
             }
             
             .subreddit-link:hover {
-                background-color: rgba(255, 255, 255, 0.2);
+                background-color: #333333;
                 transform: translateY(-2px);
             }
             
@@ -203,14 +207,21 @@
                 }
             }
         </style>
+        
+        <script src="scripts/nav.js"></script>
     </head>
     <body>
         <div class="brand">Foxana Studio</div>
         
         <div class="nav">
-            <a href="about">About</a>
-            <a href="infinity-privacy">Privacy Policy</a>
-            <a href="contact">Contact Us</a>
+            <button class="hamburger">
+                <img src="resources/menu.svg" alt="Nav" />
+            </button>
+            <div class="nav-links">
+                <a href="about">About</a>
+                <a href="infinity-privacy">Privacy Policy</a>
+                <a href="contact">Contact Us</a>
+            </div>
         </div>
         
         <div class="container">
