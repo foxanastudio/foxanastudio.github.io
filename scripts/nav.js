@@ -4,5 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');
+        e.stopPropagation();
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+            nav.classList.remove('active');
+        }
     });
 });
